@@ -1,61 +1,41 @@
-# Brain_tumor_classification
+# Brain_Tumor_Classification
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+## Introduction
 
-A short description of the project.
+The goal of this brain tumor classification project is to develop an automated system that can accurately classify brain tumor types from MRI scans. Brain tumors are abnormal growths of tissue within the brain that can be either benign (non-cancerous) or malignant (cancerous). Diagnosing brain tumors accurately is a critical task for medical professionals, as early detection and accurate classification play a significant role in the treatment and prognosis of patients.  
 
-## Project Organization
+## Objective
+Build a deep learning model that can automatically classify brain tumor from MRI scans into categories:
+- Glioma
+- Meningioma
+- Pituitary Tumor
+- No Tumor
 
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         Brain_tumor_classification and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── Brain_tumor_classification   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes Brain_tumor_classification a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
-```
+## Content
 
---------
+This repository includes:
 
+- data folder :
+    - raw -- original images (training and testing datasets)
+    - interim -- loaded adat as tfrecord
+    - processed -- processed data
+      
+- notebooks folder :
+    - [Data_wrangling_EDA.ipynb](), this step focuses on collecting the data, organizing it, and making sure it's well defined, the data is also explored to better understand it.
+    - [Modeling.ipynb](), in this notebook, images were preprocessed (filtered, cropped, transformed to enhance the contrast, normalized, and resized), and a cnn model was built and trained for brain tumor classification. A hyperparameters tuning step is also included along with evaluation.
+
+- models -- results from hyperparameter tuning (for each trial, the configuration of hyperparameters, The trained model's weights and performance metrics are stored)
+
+- metrics.json -- logs for each fold's training process, with each fold having an array of epochs containing the accuracy, loss, validation accuracy, and validation loss for that epoch.
+
+- capstone3.yaml -- used environment
+
+  
+  
+## Data source
+The dataset used in this project is available [here](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/data).
+
+
+
+## Author
+Sabra Mabrouk
