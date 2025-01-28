@@ -21,7 +21,7 @@ This repository includes:
     - processed -- processed data
       
 - notebooks folder :
-    - [Data_wrangling_EDA.ipynb](), this step focuses on collecting the data, organizing it, and making sure it's well defined, the data is also explored to better understand it.
+    - [Data_wrangling_EDA.ipynb](https://github.com/SabraMabrouk/Brain_Tumor_classification/blob/04b6729ef8e0f4617b605f800eb2012350a80317/notebooks/Data_Wrangling_EDA.ipynb), this step focuses on collecting the data, organizing it, and making sure it's well defined, the data is also explored to better understand it.
     - [Modeling.ipynb](), in this notebook, images were preprocessed (filtered, cropped, transformed to enhance the contrast, normalized, and resized), and a cnn model was built and trained for brain tumor classification. A hyperparameters tuning step is also included along with evaluation.
 
 - models -- results from hyperparameter tuning (for each trial, the configuration of hyperparameters, The trained model's weights and performance metrics are stored)
